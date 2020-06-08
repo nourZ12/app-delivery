@@ -51,6 +51,7 @@ this.presentAlert(confirmationResult);
             confirmationResult.confirm(data.confirmationCode)
                 .then(result => {
                   // User signed in successfully.
+                  this.navCtrl.navigateForward('/hello')
                   console.log(result.user);
                 }).catch(error => {
               // User couldn't sign in (bad verification code?)

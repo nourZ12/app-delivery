@@ -4,6 +4,11 @@
   </ion-toolbar>
 </ion-header>
 
+<ion-header *ngIf="!hasVerifiedEmail">
+  Please Check you email for verification email
+  <br>
+  <ion-button color="primary" (click)="sendVerificationEmail()">Send Verification Email</ion-button>
+</ion-header>
 <ion-content>
 <h5> Hello {{userEmail}}</h5>
 
