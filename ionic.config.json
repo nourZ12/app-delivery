@@ -1,0 +1,8 @@
+{
+  "name": "delivery-app",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}
