@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar color="secondary">
-    <ion-title>hello</ion-title>
+  <ion-toolbar color="dark">
+    <ion-title style="text-align: center">Hello</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,11 +10,13 @@
   <ion-button color="primary" (click)="sendVerificationEmail()">Send Verification Email</ion-button>
 </ion-header>
 <ion-content>
-<h5> Hello {{userEmail}}</h5>
 
-  <div>
+<h5 style="text-align: center" > Hello {{user}}</h5>
+
+
+  <div class="mr-auto ml-auto">
     <ion-col>
-      <button class="btn" color="danger" (click)="logout()">Log Out</button>
+      <ion-button color="warning" (click)="logout()">Log Out</ion-button>
     </ion-col>
   </div>
 </ion-content>

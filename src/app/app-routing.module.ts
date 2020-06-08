@@ -22,7 +22,11 @@ const routes: Routes = [
   {
     path: 'sms-login',
     loadChildren: () => import('./modules/sms-login/sms-login.module').then( m => m.SmsLoginPageModule)
+  },  {
+    path: 'sms-signup',
+    loadChildren: () => import('./modules/sms-signup/sms-signup.module').then( m => m.SmsSignupPageModule)
   },
+
 ];
 
 @NgModule({

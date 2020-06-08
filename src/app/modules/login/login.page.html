@@ -32,7 +32,7 @@
         </div>
       </ng-container>
     </div>
-
+<br>
     <ion-button class="submit-btn" type="submit" [disabled]="!validations_form.valid">Log In</ion-button>
 
     <label class="error-message">{{errorMessage}}</label>
@@ -41,6 +41,6 @@
     No account yet? <a (click)="goToRegisterPage()">Create an account.</a>
   </p>
   <p class="go-to-register">
-    Or  <a (click)="goToSMS()">Sign in with SMS</a>
+    Or  <a (click)="goToSMS()">Log in with SMS</a>
   </p>
 </ion-content>

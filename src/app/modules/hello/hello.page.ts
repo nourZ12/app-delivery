@@ -9,7 +9,7 @@ import {NavController} from '@ionic/angular';
     styleUrls: ['./hello.page.scss'],
 })
 export class HelloPage implements OnInit {
-    userEmail;
+    user;
     hasVerifiedEmail = true;
 
     constructor(public authService: AuthenticationService, public navCtrl: NavController, public aFire: AngularFireAuth) {
@@ -23,19 +23,20 @@ export class HelloPage implements OnInit {
         });
     }
 
-    ngOnInit() {
-        this.authService.isLoggedIn();
-        this.authService.userDetails().subscribe(res => {
-            console.log('res', res);
-            if (res !== null) {
-                this.userEmail = res.email;
-            } else {
-                this.navCtrl.navigateBack('');
-            }
-        }, err => {
-            console.log('err', err);
-        });
-    }
+  ngOnInit() {
+    this.authService.isLoggedIn();
+    this.authService.userDetails().subscribe(res => {
+      console.log('res', res);
+      if (res !== null) {
+        this.user = res.displayName;
+
+      } else {
+        this.navCtrl.navigateBack('');
+      }
+    }, err => {
+      console.log('err', err);
+    });
+  }
 
     logout() {
         this.authService.signOut()

@@ -12,12 +12,15 @@ export class HomePage {
 
   constructor(public auth: AuthenticationService, public router: Router, public navCtrl: NavController) {}
 
-  signUp(email, password) {
+  signUp(email, password, name) {
     this.auth.RegisterUser(email.value, password.value)
         .then((res) => {
           if (res.user){
-            console.log(res.user);
-            this.router.navigate(['/hello']);
+              res.user.updateProfile({
+                  displayName: name.value
+              });
+              console.log(res.user);
+              this.router.navigate(['/hello']);
           }
         }).catch((error) => {
           window.alert((error.message));
@@ -26,6 +29,8 @@ export class HomePage {
     goToRegisterPage(){
       this.navCtrl.navigateForward('/login');
     }
-
+    goToSMS() {
+        this.navCtrl.navigateForward('/sms-signup');
+    }
 
 }
